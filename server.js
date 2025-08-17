@@ -13,6 +13,11 @@ const pool = new Pool({
   ssl: { rejectUnauthorized: false } // Necesario en Render
 });
 
+app.get("/", (req, res) => {
+  res.send("Servidor funcionando 🚀");
+});
+
+
 // Ruta para insertar usuario y devolver IMC
 app.post("/usuarios", async (req, res) => {
   const { cc, nombre, apellido, edad, peso, altura, genero } = req.body;
