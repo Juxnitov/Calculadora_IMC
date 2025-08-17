@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const { Pool } = require("pg");
+require("dotenv").config();
 
 const app = express();
 app.use(cors());
@@ -26,7 +27,7 @@ app.post("/usuarios", async (req, res) => {
     res.json({ imc: result.rows[0].imc });
   } catch (err) {
     console.error("Error al insertar usuario:", err);
-    res.status(500).send("Error al insertar usuario");
+    res.status(500).send("Error al insertar usuario.");
   }
 });
 
